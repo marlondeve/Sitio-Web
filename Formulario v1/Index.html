@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WebSite</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body{
+      background-color: #9fc9d3;
+    }
+    section .color{
+      position: absolute;
+      filter: blur(150px);
+    }
+    section .color:nth-child(1){
+      background: #ff359b;
+      width: 60%;
+      height: 60%;
+      top: 15%;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    }
+    section .color:nth-child(2){
+      background: #00d2ff;
+      width: 50%;
+      height: 50%;
+      bottom: 15%;
+      left: 10%;
+      border-radius: 78% 22% 28% 72% / 30% 30% 70% 70% ;
+    }
+    section .color:nth-child(3){
+      background: #fffd87;
+      width: 30%;
+      height: 30%;
+      bottom: 15%;
+      right: 0;
+      border-radius: 32% 68% 28% 72% / 52% 72% 28% 48%  ;
+    }
+    section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 50px;
+    }
+    .container{
+      position: relative;
+      width: calc(100% - 100px);
+      min-height: calc(100vh - 200px);
+      min-height:300px;
+      background: rgb(255, 255, 255, 0.5);
+      box-shadow: 0 15px 35px rgb(255, 255, 255, 0.05);
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+    }
+    header{
+      position: absolute;
+      top: -40px;
+      right: 20px;
+      left: 20px;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      border-left: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    header .logo{
+      color: #8a2435;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 2em;
+    }
+    header ul{
+      display: flex;
+    }
+    header ul li{
+      list-style: none;
+      margin: 0 10px;
+    }
+    header ul li a{
+      text-decoration: none;
+      font-weight: 500;
+      color: #8a2435;
+      padding: 8px 15px;
+      border-radius: 25px;
+    }
+    header ul li a:hover,
+    header ul li a.activo{
+      background: #fff;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+    }
+    .contenido{
+      transform: translateX(-100px);
+      max-width: 700px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      border-left: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 40px;
+      padding-left: 110px;
+    }
+    .contenido h2{
+      font-size: 3em;
+      color: #8a2435;
+    }
+    .contenido p{
+      font-size: 1.2em;
+      color: #8a2435;
+    }
+    .contenido a{
+      display: inline-block;
+      padding: 15px 30px;
+      background: #fff;
+      color: #8a2435;
+      margin-top: 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: 500;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    .img img{
+      max-width: 300px;
+      animation: animate 3.5s linear infinite;
+    }
+    @keyframes animate{
+      0%, 100%
+      {
+        transform: translateY(25px);
+      }
+      50%{
+        transform: translateY(50px);
+      }
+    }
+    .iconos{
+      position: absolute;
+      right: -25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .iconos li{
+      list-style: none;
+    }
+    .iconos li a{
+      position: relative;
+      width: 50px;
+      height: 50px;
+      margin: 15px 0;
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      color: rgb(60, 54, 54);
+      border-radius: 10px;
+      text-decoration: none;
+      backdrop-filter: blur(2px);
+      transition: 0.5s;
+      overflow: hidden;
+    }
+    .iconos li a:hover{
+      transform: translateY(-20px);
+    }
+    .iconos li a::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      transform: skewX(45deg) translateX(150px);
+      transition: 0.5s;
+    }
+    .iconos li a:hover::before{
+      transform: skewX(45deg) translateX(-150px);
+    }
+    .copy{
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+      color: #8a2435;
+    }
+  </style>
+</head>
+<body>  
+  <section>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="container">
+      <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+          <li><a href="#" class="activo">Inicio</a></li>
+          <li><a href="#" >Servicios</a></li>
+          <li><a href="#" >Equipo</a></li>
+          <li><a href="#" >Contacto</a></li>
+        </ul>
+      </header>
+      <div class="contenido">
+        <h2>CSS</h2>
+        <P>Hojas de Estilo en Cascada (del inglés Cascading Style Sheets) o CSS es el lenguaje de estilos utilizado para describir la presentación de documentos HTML o XML (en-US) (incluyendo varios languages basados en XML como SVG, MathML o XHTML). CSS describe como debe ser renderizado el elemento estructurado en la pantalla, en papel, en el habla o en otros medios.</P>
+        <a href="#">Read More</a>
+      </div>
+      <div class="img">
+        <img src="dos.png">
+      </div>
+      <ul class="iconos">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-github"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+      <p class="copy">Github.com/marlondeve - @MarlonDev</p>
+    </div>
+  </section>
+</body>
+</html>
